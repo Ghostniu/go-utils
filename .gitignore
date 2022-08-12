@@ -1,0 +1,52 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+
+# My configurations:
+*.tar.gz
+*.tgz
+*.zip
+*.rpm
+*.exe
+/test_files
+*.xlsx
+.vscode
+.idea
+
+# go
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+build/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
