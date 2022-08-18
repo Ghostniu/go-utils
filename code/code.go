@@ -3,13 +3,13 @@ package code
 type MyCode int64
 
 const (
-	Success         MyCode = 1000
-	InvalidParams   MyCode = 1001
-	UserExist       MyCode = 1002
-	UserNotExist    MyCode = 1003
-	InvalidPassword MyCode = 1004
-	ServerBusy      MyCode = 1005
-	InvalidUrl      MyCode = 1006
+	Success           MyCode = 0
+	InvalidParams     MyCode = 1001
+	UserExist         MyCode = 1002
+	UserNotExist      MyCode = 1003
+	InvalidPassword   MyCode = 1004
+	ServerBusy        MyCode = 1005
+	InvalidUrl        MyCode = 1006
 	InvalidToken      MyCode = 1007
 	InvalidAuthFormat MyCode = 1008
 	NotLogin          MyCode = 1009
@@ -17,13 +17,13 @@ const (
 )
 
 var msgFlags = map[MyCode]string{
-	Success:         "success",
-	InvalidParams:   "请求参数错误",
-	UserExist:       "用户名重复",
-	UserNotExist:    "用户不存在",
-	InvalidPassword: "用户名或密码错误",
-	ServerBusy:      "服务繁忙",
-	InvalidUrl:      "请求路径错误",
+	Success:           "success",
+	InvalidParams:     "请求参数错误",
+	UserExist:         "用户名重复",
+	UserNotExist:      "用户不存在",
+	InvalidPassword:   "用户名或密码错误",
+	ServerBusy:        "服务繁忙",
+	InvalidUrl:        "请求路径错误",
 	InvalidToken:      "无效的Token",
 	InvalidAuthFormat: "认证格式有误",
 	NotLogin:          "未登录",
