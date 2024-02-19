@@ -1,3 +1,3 @@
-module gitee.com/littleant/go-utils
+module github.com/Ghostniu/go-utils
 
 go 1.17
