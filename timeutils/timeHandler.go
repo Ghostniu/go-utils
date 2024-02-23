@@ -74,7 +74,7 @@ func GetLastHalfMonth(year int, month time.Month, day int) (startTimeStr, endTim
 	}
 }
 
-func StrToTime(startTimeStr string, EndTimeStr string) (startTime time.Time, endTime time.Time, err error) {
+func StrToTime(startTimeStr, EndTimeStr string) (startTime time.Time, endTime time.Time, err error) {
 	startTime, err = time.Parse(DATE_FORMAT, startTimeStr)
 	if err != nil {
 		return
@@ -83,5 +83,11 @@ func StrToTime(startTimeStr string, EndTimeStr string) (startTime time.Time, end
 	if err != nil {
 		return
 	}
+	return
+}
+
+func TimeToStr(startTimeStr, EndTimeStr time.Time) (startTime, endTime string) {
+	startTime = startTimeStr.Format(DATE_FORMAT)
+	endTime = EndTimeStr.Format(DATE_FORMAT)
 	return
 }
