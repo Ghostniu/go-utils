@@ -36,8 +36,16 @@ func GetLastWeek(week int) (startTime, endTime time.Time) {
 	return
 }
 
+// 获取当月的开始时间和结束时间
+func GetThisMonth() (startTime, endTime time.Time) {
+	year, month, _ := time.Now().Date()
+	thisMonth := time.Date(year, month, 1, 0, 0, 0, 0, time.Local)
+	endTime = thisMonth.AddDate(0, +1, -1)
+	return thisMonth, endTime
+}
+
 // 获取上个月的开始时间和结束时间(字符串类型)
-func GetLastMonth() (startTimeStr string, endTimeStr string) {
+func GetLastMonthStr() (startTimeStr string, endTimeStr string) {
 	year, month, _ := time.Now().Date()
 	thisMonth := time.Date(year, month, 1, 0, 0, 0, 0, time.Local)
 	startTimeStr = thisMonth.AddDate(0, -1, 0).Format(DATE_FORMAT)
@@ -46,7 +54,7 @@ func GetLastMonth() (startTimeStr string, endTimeStr string) {
 }
 
 // 获取昨天的开始时间和结束时间(字符串类型)
-func GetYeastDay() (startTimeStr string, endTimeStr string) {
+func GetYeastDayStr() (startTimeStr string, endTimeStr string) {
 	d := time.Now().Add(-time.Hour * 24)
 	startTime := time.Date(d.Year(), d.Month(), d.Day(), 0, 0, 0, 0, d.Location())
 	endTime := time.Date(d.Year(), d.Month(), d.Day(), 23, 59, 59, 0, d.Location())
@@ -56,7 +64,7 @@ func GetYeastDay() (startTimeStr string, endTimeStr string) {
 }
 
 // 获取上个月的开始时间和结束时间(字符串类型) 拆分两半 1 取上半个月的值，2 取下半月的值
-func GetLastHalfMonth(year int, month time.Month, day int) (startTimeStr, endTimeStr string) {
+func GetLastHalfMonthStr(year int, month time.Month, day int) (startTimeStr, endTimeStr string) {
 	var startTime, endTime time.Time
 	// 当月第一天
 	dayOne := time.Date(year, month, 1, 0, 0, 0, 0, time.Local)

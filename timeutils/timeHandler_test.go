@@ -62,3 +62,8 @@ func TestGetLastWeek(t *testing.T) {
 	start, end := GetLastWeek(-1)
 	fmt.Println(start, end)
 }
+
+func TestGetThisMonth(t *testing.T) {
+	start, end := GetThisMonth()
+	fmt.Println(start, end)
+}
